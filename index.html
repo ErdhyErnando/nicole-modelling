@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nicole Kansa - Home</title>
+  <!-- Google Fonts: Instrument Serif -->
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&display=swap"
+    rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Instrument Serif", serif;
+    }
+
+    body {
+      color: #333;
+      background-color: #f9f9f9;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-bottom: 1px solid #ccc;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      /* Fixed typo here */
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    nav a:hover {
+      color: #555;
+    }
+
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1em;
+      margin-bottom: 20px;
+    }
+
+    .measurements {
+      font-size: 1.1em;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .collage {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .collage img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .collage img:nth-child(1) {
+      /* grid-column: span 2; Removed this line */
+      /* grid-row: span 2; Removed this line */
+    }
+
+    .collage img:nth-child(3) {
+      /* grid-column: span 2; Removed this line */
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2em;
+      }
+
+      .collage img:nth-child(1),
+      .collage img:nth-child(3) {
+        /* grid-column: span 1; Removed this line */
+        /* grid-row: span 1; Removed this line */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section>
+    <h1>Nicole Kansa</h1>
+    <h3>Bogor, Indonesia</h3> <!-- Fixed mismatched closing tag here -->
+    <p class="measurements">
+      HEIGHT: 170 CM | WEIGHT: 58 KG | AGE: 23 | SHOE: 39
+    </p>
+    <div class="collage" id="collage"></div>
+    <script>
+      // Array of image URLs for the collage
+      const collageImages = [
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-11.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-10.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-12.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-15.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-44.jpg",
+
+
+
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-1.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-5.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-3.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-8.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-2.png",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-9.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-13.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-41.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-14.png",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-16.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-7.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-17.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-20.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-21.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-23.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-18.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-25.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-28.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-30.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-32.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-42.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-34.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-26.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-37.jpeg",
+        "https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-39.jpeg",
+      ];
+      // Collage container
+      const collageDiv = document.getElementById('collage');
+      collageImages.forEach((src, i) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = `Model Photo ${i + 1}`;
+        collageDiv.appendChild(img);
+      });
+    </script>
+  </section>
+  <footer style="
+        background: #222;
+        color: #fff;
+        text-align: center;
+        padding: 16px 0;
+        margin-top: 40px;
+        font-size: 1em;
+        letter-spacing: 1px;
+      ">
+    &copy; 2025 Nicole Kansa. All rights reserved.
+  </footer>
+</body>
+
+</html>
