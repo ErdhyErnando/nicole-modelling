@@ -5,6 +5,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nicole Kansa - Home</title>
+  <meta name="description"
+    content="Discover Nicole Kansa, a model from Bogor, Indonesia. View her portfolio, measurements, and stunning photos." />
+  <meta name="keywords" content="Nicole Kansa, model, Bogor, Indonesia, fashion, photography, portfolio" />
+  <meta property="og:title" content="Nicole Kansa - Home" />
+  <meta property="og:description"
+    content="Discover Nicole Kansa, a model from Bogor, Indonesia. View her portfolio, measurements, and stunning photos." />
+  <meta property="og:image" content="https://pub-c17b456adf664de7b0c6d51c6d76cc62.r2.dev/nicole-11.jpeg" />
+  <meta property="og:url" content="https://nicolekansa.vercel.app/index.html" /> <!-- Replace with actual URL -->
+  <meta property="og:type" content="website" />
   <!-- Google Fonts: Instrument Serif -->
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&display=swap"
     rel="stylesheet" />
@@ -80,24 +89,9 @@
       border-radius: 5px;
     }
 
-    .collage img:nth-child(1) {
-      /* grid-column: span 2; Removed this line */
-      /* grid-row: span 2; Removed this line */
-    }
-
-    .collage img:nth-child(3) {
-      /* grid-column: span 2; Removed this line */
-    }
-
     @media (max-width: 768px) {
       h1 {
         font-size: 2em;
-      }
-
-      .collage img:nth-child(1),
-      .collage img:nth-child(3) {
-        /* grid-column: span 1; Removed this line */
-        /* grid-row: span 1; Removed this line */
       }
     }
   </style>
@@ -160,6 +154,7 @@
         const img = document.createElement('img');
         img.src = src;
         img.alt = `Model Photo ${i + 1}`;
+        img.loading = 'lazy';
         collageDiv.appendChild(img);
       });
     </script>
